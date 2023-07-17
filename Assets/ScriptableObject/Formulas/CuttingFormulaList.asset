@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd000f7c066a1784da32fee8229148cb, type: 3}
+  m_Name: CuttingFormulaList
+  m_EditorClassIdentifier: 
+  cuttingFormulaArray:
+  - input: {fileID: 11400000, guid: c07681cd5fa51f14c9456de357aa7c18, type: 2}
+    output: {fileID: 11400000, guid: aede747b5316e3544930f1576fb6fd70, type: 2}
+    cuttingNumber: 3
+  - input: {fileID: 11400000, guid: f677b02b75e7fd348b0becad138438a8, type: 2}
+    output: {fileID: 11400000, guid: 8189638fb4c8cd54b8ca19af2d0176d5, type: 2}
+    cuttingNumber: 4
+  - input: {fileID: 11400000, guid: c14fbbf64ce23b646a59dd6b62bbd42a, type: 2}
+    output: {fileID: 11400000, guid: 91897bebeb45094498c01940757a3540, type: 2}
+    cuttingNumber: 5

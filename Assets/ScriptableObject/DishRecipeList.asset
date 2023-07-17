@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82e16de0ea8b640438540c0313d1e4c1, type: 3}
+  m_Name: DishRecipeList
+  m_EditorClassIdentifier: 
+  dishRecipeArray:
+  - name: Cheese Hamburg
+    recipe:
+    - {fileID: 11400000, guid: 1f12e9d829879ad4a9636884848a47d1, type: 2}
+    - {fileID: 11400000, guid: cf2564f28ddf6d84ab779318ddb08e26, type: 2}
+    - {fileID: 11400000, guid: 8189638fb4c8cd54b8ca19af2d0176d5, type: 2}
+    - {fileID: 11400000, guid: aede747b5316e3544930f1576fb6fd70, type: 2}
+    - {fileID: 11400000, guid: 91897bebeb45094498c01940757a3540, type: 2}
+  - name: Salad
+    recipe:
+    - {fileID: 11400000, guid: aede747b5316e3544930f1576fb6fd70, type: 2}
+    - {fileID: 11400000, guid: 91897bebeb45094498c01940757a3540, type: 2}
