@@ -1,7 +1,6 @@
 using UnityEngine;
 using FSM;
 using static StoveCounter;
-using Unity.VisualScripting;
 
 public partial class StoveCounter : CanPlacedKitchenObjectCounter, IHasStateMachine<StoveState>
 {
@@ -17,24 +16,12 @@ public partial class StoveCounter : CanPlacedKitchenObjectCounter, IHasStateMach
 
     private FryingFormulaList.FryingFormula fryingFormula;
 
-    private FSMachine<StoveState, StoveCounter> fsm;
+    private ICanStateChange<StoveState> fsm;
 
-    public IStateMachineEvent<StoveState> FSM => fsm;
+    public IFSMPublic<StoveState> FSM => fsm as IFSMPublic<StoveState>;
 
     private void Awake() {
         fsm = new FSMachine<StoveState, StoveCounter>(this, StoveState.Idle);
-    }
-
-    private void Start() {
-        fsm.EnterState();
-    }
-
-    private void FixedUpdate() {
-        fsm.FixedUpdateState();
-    }
-
-    private void Update() {
-        fsm.UpdateState();
     }
 
     public override void Interact(Player player) {

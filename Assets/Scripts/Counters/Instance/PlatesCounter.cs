@@ -39,7 +39,7 @@ public class PlatesCounter : Counter
     }
 
     private void Update() {
-        if (GameController.Instance.FSM.CurrentState != GameState.Playing) return;
+        if (GameController.Instance.FSM.CurrentStateType != GameState.Playing) return;
 
         if (spawnCDTimer.IsTimeUp()) {
             if(PlateCount < plateCountMax) {

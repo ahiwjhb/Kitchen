@@ -1,10 +1,10 @@
 using System;
 using Unity.VisualScripting;
-using UnityEngine.InputSystem;
+using UnityEngine;
 
 namespace FSM
 {
-    public class FSMachine<StateEnum, ContextClass> : IStateMachineMethod<StateEnum, ContextClass>, IStateMachineEvent<StateEnum> where StateEnum : Enum where ContextClass : IHasStateMachine<StateEnum>
+    public class FSMachine<StateEnum, ContextClass> : ICurrentStateHasCircleMethod, ICanStateChange<StateEnum>, IFSMPublic<StateEnum> where StateEnum : Enum where ContextClass : MonoBehaviour, IHasStateMachine<StateEnum>
     {
         public event Action<StateEnum> OnStateChange;
 
@@ -16,26 +16,11 @@ namespace FSM
         public FSMachine(ContextClass contextClass, StateEnum defaultState) {
             stateContainer = new StateList<StateEnum, ContextClass>(contextClass);
             currentState = stateContainer.GetStateMethod(defaultState);
+            contextClass.AddComponent<FSMBehaviour>().hasCurrentStateCircle = this;
         }
 
-        public StateEnum CurrentState => currentState.Type;
+        public StateEnum CurrentStateType => currentState.Type;
 
-
-        public void EnterState() {
-            currentState.EnterState();
-        }
-            
-        public void FixedUpdateState() {
-            currentState.FixedUpdateState();
-        }
-
-        public void UpdateState() {
-            currentState.UpdateState();
-        }
-
-        public void ExitState() {
-            currentState.ExitState();
-        }
 
         public void SwitchState(StateEnum stateEnum) {
             OnStateChange?.Invoke(stateEnum);
@@ -60,16 +45,8 @@ namespace FSM
             currentState = stateContainer.GetStateMethod(stateEnum);
         }
 
-        //private bool IsContextClasStateHasField() {
-        //    string agintClassName = typeof(ContextClass).FullName;
-        //    FieldInfo[] enumFields = typeof(StateEnum).GetFields();
-        //    for (int i = 1; i < enumFields.Length; ++i) {
-        //        string stateClassName = string.Format("{0}+{1}State", agintClassName, enumFields[i].Name);
-        //        BindingFlags bindingFlags = BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic;
-        //        bool hasField = Type.GetType(stateClassName).GetFields(bindingFlags).Length > 0;
-        //        if (hasField) return true;
-        //    }
-        //    return false;
-        //}
+        public IStateCircleMethod GetCurrentStateCirlce() {
+            return currentState;
+        }
     }
 }

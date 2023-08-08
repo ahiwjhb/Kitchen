@@ -23,12 +23,13 @@ public static class ConfigHelper
         string url;
 
 #if   UNITY_EDITOR || UNITY_STANDALONE
-        url = "file://" + Application.streamingAssetsPath + "/" + fileName;
+        url =     "file://" + Application.streamingAssetsPath +   "/" + fileName;
 #elif UNITY_IPHONE
-        url = "file://" + Application.dataPath + "/Raw"     + "/" + fileName;
+        url =     "file://" + Application.dataPath + "/Raw"     + "/" + fileName;
 #elif UNITY_ANDROID
         url = "jar:file://" + Application.dataPath + "!/assets" + "/" + fileName;
 #endif
+
         UnityWebRequest uwr = UnityWebRequest.Get(url + ".txt");
         uwr.SendWebRequest();
         while (true)

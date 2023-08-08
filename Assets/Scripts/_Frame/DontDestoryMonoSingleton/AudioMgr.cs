@@ -9,9 +9,11 @@ public class AudioMgr : DontDestoryMonoSingleton<AudioMgr>
     private const float MAX_PITCH = 1.1f;
     private const float MIN_PITCH = 0.9f;
 
+    public float Volume { get; set; }
 
-    protected override void Awake(){
+    protected override void Awake() {
         base.Awake();
+        Volume = 1f;
     }
 
     public void PlaySFX(AudioData data){// 播放持续音效
@@ -21,7 +23,7 @@ public class AudioMgr : DontDestoryMonoSingleton<AudioMgr>
     }
 
     public void PlayOnceSFX(AudioClip audioClip, float volume = 1f){// 播放单次音效
-        oncePlayer.PlayOneShot(audioClip, volume);
+        oncePlayer.PlayOneShot(audioClip, volume * Volume);
     }
 
     public void PlayOnceRandomSFX(AudioData data){// 播放随机音高音效

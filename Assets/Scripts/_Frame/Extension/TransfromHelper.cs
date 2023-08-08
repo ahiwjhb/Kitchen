@@ -1,9 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 static public class TransfromHelp
 {
+    public static T GetOrAddComponent<T>(this Transform tsm) where T : Component {
+        return tsm.GetComponent<T>() ?? tsm.AddComponent<T>();
+    }
+
     /// <summary>
     /// 根据名称寻找层级未知的子类transform组件
     /// </summary>

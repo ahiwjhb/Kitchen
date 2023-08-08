@@ -7,14 +7,17 @@ public partial class GameController
     {
         public override GameState Type => GameState.Pause;
 
+        private bool playerInputCache;
+
         public override void EnterState() {
             base.EnterState();
+            playerInputCache = PlayerInput.Instance.inputEnable;
             PlayerInput.Instance.Disable();
             Time.timeScale = 0;
         }
 
-        public override void FixedUpdateState() {
-            base.FixedUpdateState();
+        public override void UpdateState() {
+            base.UpdateState();
             if (PlayerInput.Instance.IsPauseKeyDown) {
                 Back();
             }
@@ -22,7 +25,10 @@ public partial class GameController
 
         public override void ExitState() {
             base.ExitState();
-            PlayerInput.Instance.Enable();
+            if (playerInputCache)
+                PlayerInput.Instance.Enable();
+            else
+                PlayerInput.Instance.Disable();
             Time.timeScale = 1;
         }
     }

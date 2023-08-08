@@ -8,11 +8,11 @@ public class SceneLoader : DontDestoryMonoSingleton<SceneLoader>
 {
     [SerializeField] float fadeTime = 0.5f;
 
-    public static readonly string MengDeScence = "MengDe";
+    public const string GAME = "GameScene"; 
 
     private bool isLoading = false;
 
-    private SceneLoadUI loadingUI;
+    private ScenceLoadingUI loadingUI;
 
     private Image processBar;
 
@@ -25,7 +25,7 @@ public class SceneLoader : DontDestoryMonoSingleton<SceneLoader>
 
     protected override void Awake() {
         base.Awake();
-        loadingUI = transform.GetComponentInGameObject<SceneLoadUI>();
+        loadingUI = transform.FindInPrognies("LoadingUI").GetOrAddComponent<ScenceLoadingUI>();
         processBar = transform.FindInPrognies("ProcessBar").GetComponent<Image>();
     }
 
@@ -59,10 +59,10 @@ public class SceneLoader : DontDestoryMonoSingleton<SceneLoader>
         }
         processBar.fillAmount = 1;
     }
+}
 
-    private class SceneLoadUI : UIWindow
-    {
+public class ScenceLoadingUI : UIWindow
+{
 
-    }
 }
 

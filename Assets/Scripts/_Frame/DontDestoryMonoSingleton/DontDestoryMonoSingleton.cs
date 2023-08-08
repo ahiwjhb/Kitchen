@@ -1,18 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
 /// <summary>
 /// 不会被销毁的持久单例类
 /// </summary>
 /// <typeparam name="T"></typeparam>
+[DefaultExecutionOrder(-100)]
 public class DontDestoryMonoSingleton<T> : MonoBehaviour where T : DontDestoryMonoSingleton<T>
 {
     private static T instance;
 
-    public static T Inst {
+    public static T Instance {
         get {
             if(instance == null) {
                 instance = new GameObject("new" + typeof(T).Name).AddComponent<T>();
+                DontDestroyOnLoad(instance);
                 instance.Awake();
             }
             return instance;

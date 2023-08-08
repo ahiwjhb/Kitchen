@@ -1,7 +1,5 @@
 using Helper;
 using FSM;
-using System.Diagnostics;
-using UnityEngine.Rendering.Universal;
 
 public partial class GameController
 {
@@ -16,8 +14,8 @@ public partial class GameController
             waitTimer.ReStart(ctx.playGameWaitTimeSecond);
         }
 
-        public override void FixedUpdateState() {
-            base.FixedUpdateState();
+        public override void UpdateState() {
+            base.UpdateState();
 
             if (waitTimer.IsTimeUp()) {
                 ctx.fsm.SwitchState(GameState.Playing);

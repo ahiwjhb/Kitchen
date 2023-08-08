@@ -33,12 +33,12 @@ public class DishOrderSender : MonoSingleton<DishOrderSender>
     }
 
     private void Start() {
-        OnOrderSubmitSuccessful += (empty) => AudioMgr.Inst.PlayOnceSFX(submitSuccessfulSound, 0.4f);
-        OnOrderSumbitFail += () => AudioMgr.Inst.PlayOnceSFX(submitFailSound, 0.4f);
+        OnOrderSubmitSuccessful += (empty) => AudioMgr.Instance.PlayOnceSFX(submitSuccessfulSound, 0.4f);
+        OnOrderSumbitFail += () => AudioMgr.Instance.PlayOnceSFX(submitFailSound, 0.4f);
     }
 
     private void Update() {
-        if (GameController.Instance.FSM.CurrentState != GameState.Playing) return;
+        if (GameController.Instance.FSM.CurrentStateType != GameState.Playing) return;
 
         if (generateOrderTimer.IsTimeUp() && dishRecipeWaitQueue.Count < maxOrderInWaitQueue) {
             DishRecipe randDisRecipe = dishRecipeArray[UnityEngine.Random.Range(0, dishRecipeArray.Count)];

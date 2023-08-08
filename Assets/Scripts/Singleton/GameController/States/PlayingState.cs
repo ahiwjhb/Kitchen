@@ -15,8 +15,8 @@ public partial class GameController
             playingGameTimer.ReStart(ctx.playGameTimeSecond);
         }
 
-        public override void FixedUpdateState() {
-            base.FixedUpdateState();
+        public override void UpdateState() {
+            base.UpdateState();
 
             bool isGameTimeOver = playingGameTimer.IsTimeUp();
             if (isGameTimeOver) {
