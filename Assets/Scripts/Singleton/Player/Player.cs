@@ -31,11 +31,6 @@ public class Player : MonoSingleton<Player>, IPlaceKitchenObject
         PlayerInput.Instance.OnClickSecondaryInteractKey += SecondaryInteractWithObject;
     }
 
-    private void OnDisable() {
-        PlayerInput.Instance.OnClickInteractKey -= InteractWithObject;
-        PlayerInput.Instance.OnClickSecondaryInteractKey -= SecondaryInteractWithObject;
-    }
-
     private void FixedUpdate() {
         HandleMovenet();
         HandleSelectInteractObject();

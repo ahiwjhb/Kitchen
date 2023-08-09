@@ -9,6 +9,8 @@ public class StoveCounterVisual : MonoBehaviour
 
     [SerializeField] ProcessBarUI overDoingProcessBarUI;
 
+    [SerializeField] GameObject overDoingWarningUI;
+
     [SerializeField] GameObject sizzlingParticlesVFX;
 
     [SerializeField] GameObject stoveVFX;
@@ -27,6 +29,7 @@ public class StoveCounterVisual : MonoBehaviour
         stoveCounter.FSM.GetStateEvent(StoveState.Idle).OnEnterState += OnEnterIdleState;
         stoveCounter.FSM.GetStateEvent(StoveState.Frying).OnEnterState += OnEnterFryingState;
         stoveCounter.FSM.GetStateEvent(StoveState.OverDoing).OnEnterState += OnEnterOverDoingState;
+        stoveCounter.FSM.GetStateEvent(StoveState.OverDoing).OnExitState += OnExitOverDoingState;
         stoveCounter.FSM.GetStateEvent(StoveState.Burned).OnEnterState += OnEnterBurned;
     }
 
@@ -48,6 +51,11 @@ public class StoveCounterVisual : MonoBehaviour
 
     private void OnEnterOverDoingState() {
         SwitchProcessBar(overDoingProcessBarUI);
+        overDoingWarningUI.SetActive(true);
+    }
+
+    private void OnExitOverDoingState() {
+        overDoingWarningUI.SetActive(false);
     }
 
     private void OnEnterBurned() {

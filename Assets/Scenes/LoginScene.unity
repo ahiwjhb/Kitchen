@@ -2071,6 +2071,7 @@ MonoBehaviour:
   gameStartButton: {fileID: 1951147932}
   optionUI: {fileID: 1565847423}
   optionButton: {fileID: 805296913}
+  quiteButton: {fileID: 60837291}
 --- !u!4 &985057000
 Transform:
   m_ObjectHideFlags: 0
