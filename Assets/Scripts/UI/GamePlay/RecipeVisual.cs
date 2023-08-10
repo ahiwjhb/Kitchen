@@ -19,7 +19,7 @@ public class RecipeVisual : MonoBehaviour
             foreach(var kitchenObjectSO in dishRecipe.recipe) {
                 Image icon = new GameObject().AddComponent<Image>();
                 icon.sprite = kitchenObjectSO.sprite;
-                icon.transform.SetParent(iconsTSM);
+                icon.transform.SetParent(iconsTSM, false);
             }
         }
     }

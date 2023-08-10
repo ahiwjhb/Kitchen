@@ -18,8 +18,8 @@ public class DishOrderWaitQueueUI : UIWindow
     }
 
     private void AddDishRecipeUI(DishRecipe dishRecipe) {
-        GameObject dishRecipeUI = Instantiate(dishRecipeUIPrefab);
-        dishRecipeUI.transform.SetParent(dishRecipesUITSM);
+        GameObject dishRecipeUI = Instantiate(dishRecipeUIPrefab, dishRecipesUITSM);
+        //dishRecipeUI.transform.SetParent(dishRecipesUITSM);
         dishRecipeUI.GetComponent<RecipeVisual>().CurrentDishRecipe = dishRecipe;
         dishRecipeUIList.Add(new Tuple<DishRecipe, GameObject>(dishRecipe, dishRecipeUI));
     }

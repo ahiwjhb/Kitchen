@@ -1,9 +1,10 @@
 using System;
+using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
 
-public class Player : MonoSingleton<Player>, IPlaceKitchenObject
+public class Player : NetworkBehaviour, IPlaceKitchenObject
 {
     [SerializeField] Transform holdingObjectTransfrom;
 
@@ -21,8 +22,7 @@ public class Player : MonoSingleton<Player>, IPlaceKitchenObject
 
     private IInteractable selectedInteractObject;
 
-    protected override void Awake() {
-        base.Awake();
+    private void Awake() {
         movement = GetComponent<Movement>();
     }
 
