@@ -10,10 +10,10 @@ namespace FSM
             lastStateEnum = ctx.FSM.CurrentStateType;
         }
 
-        public void Back() {
+        public void StateBack() {
             ExitState();
             if(ctx.FSM.GetStateEvent(lastStateEnum) is InterruptState<StateEnum, ContextClass>) {
-                (ctx.FSM.GetStateEvent(lastStateEnum) as InterruptState<StateEnum, ContextClass>).Back();
+                (ctx.FSM.GetStateEvent(lastStateEnum) as InterruptState<StateEnum, ContextClass>).StateBack();
             }
             else {
                 (ctx.FSM as ICanStateChange<StateEnum>).SetCurrentState(lastStateEnum);

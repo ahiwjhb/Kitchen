@@ -3,9 +3,9 @@ using UnityEngine;
 
 public class FSMBehaviour : MonoBehaviour
 {
-    public ICurrentStateHasCircleMethod hasCurrentStateCircle;
+    public IHasCurrentState mandatorFSM;
 
-    private IStateCircleMethod currentState => hasCurrentStateCircle.GetCurrentStateCirlce();
+    private IStateCircleMethod currentState => mandatorFSM.GetCurrentState();
 
     private void Start() {
         currentState.EnterState();

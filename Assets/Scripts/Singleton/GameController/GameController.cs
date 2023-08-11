@@ -15,7 +15,7 @@ public partial class GameController : MonoSingleton<GameController>, IHasStateMa
 
     [SerializeField] float playGameTimeSecond = 60;
 
-    private ICanStateChange<GameState> fsm;
+    private IStateMechine<GameState, GameController> fsm;
 
 
     protected override void Awake() {
@@ -27,7 +27,7 @@ public partial class GameController : MonoSingleton<GameController>, IHasStateMa
 
     public float PlayGameTimeSecond => playGameTimeSecond;
 
-    public IFSMPublic<GameState> FSM => fsm as IFSMPublic<GameState>;
+    public IStateMechinePublic<GameState> FSM => fsm;
 
     public static void Debug(string msg) {
         UnityEngine.Debug.Log(msg);

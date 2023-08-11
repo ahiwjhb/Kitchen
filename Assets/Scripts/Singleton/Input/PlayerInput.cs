@@ -60,7 +60,7 @@ public class PlayerInput : DontDestoryMonoSingleton<PlayerInput>
         return inputActions.GamePlayInput.Move.ReadValue<Vector2>();
     }
 
-    public string GetBindingKey(BindingKey bingdingKey) {
+    public string GetBindingKeyText(BindingKey bingdingKey) {
         var bindingInfo = GetBindingInfo(bingdingKey);
         var inputAction = bindingInfo.Item1;
         var bindingIndex = bindingInfo.Item2;
@@ -91,12 +91,12 @@ public class PlayerInput : DontDestoryMonoSingleton<PlayerInput>
 
     private Tuple<InputAction, int> GetBindingInfo(BindingKey bingdingKey) {
         return bingdingKey switch {
-            BindingKey.MoveUp => new Tuple<InputAction, int>(GamePlayInput.Move, 1),
-            BindingKey.MoveDonw => new Tuple<InputAction, int>(GamePlayInput.Move, 2),
-            BindingKey.MoveLeft => new Tuple<InputAction, int>(GamePlayInput.Move, 3),
-            BindingKey.MoveRight => new Tuple<InputAction, int>(GamePlayInput.Move, 4),
-            BindingKey.Interact => new Tuple<InputAction, int>(GamePlayInput.Interact, 0),
-            BindingKey.SecondaryInteract => new Tuple<InputAction, int>(GamePlayInput.SecondaryInteract, 0),
+            BindingKey.MoveUp => new(GamePlayInput.Move, 1),
+            BindingKey.MoveDonw => new (GamePlayInput.Move, 2),
+            BindingKey.MoveLeft => new(GamePlayInput.Move, 3),
+            BindingKey.MoveRight => new(GamePlayInput.Move, 4),
+            BindingKey.Interact => new(GamePlayInput.Interact, 0),
+            BindingKey.SecondaryInteract => new(GamePlayInput.SecondaryInteract, 0),
             _ => default,
         };
     }

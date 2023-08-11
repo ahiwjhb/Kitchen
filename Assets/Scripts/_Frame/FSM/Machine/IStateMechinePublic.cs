@@ -2,7 +2,7 @@
 
 namespace FSM
 {
-    public interface IFSMPublic<StateEnum> where StateEnum : Enum
+    public interface IStateMechinePublic<StateEnum> where StateEnum : Enum
     {
         public event Action<StateEnum> OnStateChange;
 

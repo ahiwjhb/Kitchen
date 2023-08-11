@@ -60,7 +60,7 @@ public class OptionUI : UIWindow
     }
 
     private void UpdateRebindButtonTexts() {
-        Func<BindingKey, string> BindingKeyToString = PlayerInput.Instance.GetBindingKey;
+        Func<BindingKey, string> BindingKeyToString = PlayerInput.Instance.GetBindingKeyText;
         SetButtonText(moveUpRebindButton, BindingKeyToString(BindingKey.MoveUp));
         SetButtonText(moveDownRebindButton, BindingKeyToString(BindingKey.MoveDonw));
         SetButtonText(moveLeftRebindButton, BindingKeyToString(BindingKey.MoveLeft));

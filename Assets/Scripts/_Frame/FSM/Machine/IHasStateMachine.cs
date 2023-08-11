@@ -4,6 +4,6 @@ namespace FSM
 {
     public interface IHasStateMachine<StateEnum> where StateEnum : Enum
     {
-        public IFSMPublic<StateEnum> FSM { get; }
+        public IStateMechinePublic<StateEnum> FSM { get; }
     }
 }

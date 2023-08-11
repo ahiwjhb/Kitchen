@@ -19,7 +19,7 @@ public partial class GameController
         public override void UpdateState() {
             base.UpdateState();
             if (PlayerInput.Instance.IsPauseKeyDown) {
-                Back();
+                StateBack();
             }
         }
 

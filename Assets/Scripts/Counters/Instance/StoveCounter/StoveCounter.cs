@@ -18,7 +18,7 @@ public partial class StoveCounter : CanPlacedKitchenObjectCounter, IHasStateMach
 
     private ICanStateChange<StoveState> fsm;
 
-    public IFSMPublic<StoveState> FSM => fsm as IFSMPublic<StoveState>;
+    public IStateMechinePublic<StoveState> FSM => fsm as IStateMechinePublic<StoveState>;
 
     private void Awake() {
         fsm = new FSMachine<StoveState, StoveCounter>(this, StoveState.Idle);
