@@ -5,7 +5,7 @@ using System.Reflection;
 namespace FSM
 {
     public class StateList<StateEnum, ContextClass> : IStateContainer<StateEnum, ContextClass> where StateEnum : Enum where ContextClass : IHasStateMachine<StateEnum>
-    {
+    { 
         private List<State<StateEnum, ContextClass>> stateList;
 
         public StateList(ContextClass context) {

@@ -32,6 +32,7 @@ public class Player : NetworkBehaviour, IPlaceKitchenObject
     }
 
     private void FixedUpdate() {
+        if (!IsOwner) return;
         HandleMovenet();
         HandleSelectInteractObject();
     }

@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da90baf34ddff814e8df9b76dd9ed2a4, type: 3}
   m_Name: Salad
   m_EditorClassIdentifier: 
+  id: 10004
   name: Salad
   recipe:
   - {fileID: 11400000, guid: aede747b5316e3544930f1576fb6fd70, type: 2}

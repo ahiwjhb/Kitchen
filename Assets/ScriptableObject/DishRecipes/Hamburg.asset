@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da90baf34ddff814e8df9b76dd9ed2a4, type: 3}
   m_Name: Hamburg
   m_EditorClassIdentifier: 
+  id: 10003
   name: Humburg
   recipe:
   - {fileID: 11400000, guid: 1f12e9d829879ad4a9636884848a47d1, type: 2}

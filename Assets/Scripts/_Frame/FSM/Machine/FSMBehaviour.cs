@@ -19,8 +19,7 @@ public class FSMBehaviour : MonoBehaviour
         currentState.UpdateState();   
     }
 
-    private void OnDisable() {
+    private void OnDestroy() {
         currentState.ExitState();
     }
-
 }

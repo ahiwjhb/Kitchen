@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8090f7d0a55e1041a5d17592a106f6e, type: 3}
   m_Name: MeatPattyCooked
   m_EditorClassIdentifier: 
+  id: 20006
   sprite: {fileID: 21300000, guid: f1f50c7ef90b19741b26f2040806cf56, type: 3}
   objectName: Meat Patty Cooked
   perfab: {fileID: 6605586692066898689, guid: bcb4582e06d0a2d4b896252ff1461d9d, type: 3}

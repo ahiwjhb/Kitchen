@@ -8,7 +8,6 @@ public class DishRecipeList : ScriptableObject
     [SerializeField] List<DishRecipe> dishRecipeArray;
 
 
-
     [Serializable]
     public class DishRecipe {
         public string name;

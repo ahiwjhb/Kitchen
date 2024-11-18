@@ -5,6 +5,7 @@ using static GameController;
 public partial class GameController : MonoSingleton<GameController>, IHasStateMachine<GameState>
 {
     public enum GameState {
+        Connect,
         Wait,
         Playing,
         Pause,
@@ -29,7 +30,7 @@ public partial class GameController : MonoSingleton<GameController>, IHasStateMa
 
     public IStateMechinePublic<GameState> FSM => fsm;
 
-    public static void Debug(string msg) {
-        UnityEngine.Debug.Log(msg);
-    }
+    //public static void Debug(string msg) {
+    //    UnityEngine.Debug.Log(msg);
+    //}
 }

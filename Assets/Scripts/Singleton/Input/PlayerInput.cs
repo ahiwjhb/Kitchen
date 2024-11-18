@@ -1,7 +1,6 @@
 using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using static UnityEngine.InputSystem.InputActionRebindingExtensions;
 
 public class PlayerInput : DontDestoryMonoSingleton<PlayerInput>
 {

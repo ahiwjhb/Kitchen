@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace FSM
+namespace FSM 
 {
     public abstract class State<StateEnum, ContextClass> : IStateMethod<StateEnum>, IStateEvent where StateEnum : Enum where ContextClass : IHasStateMachine<StateEnum>
     {

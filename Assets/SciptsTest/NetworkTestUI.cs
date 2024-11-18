@@ -4,13 +4,15 @@ using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class NetworkTestUI : MonoBehaviour
+public class NetworkTestUI : UIWindow
 {
     [SerializeField] Button hostBtn;
 
     [SerializeField] Button clientBtn;
 
     private void Start() {
+        SetVisible(true);
+
         hostBtn.onClick.AddListener(() => {
             NetworkManager.Singleton.StartHost();
             gameObject.SetActive(false);

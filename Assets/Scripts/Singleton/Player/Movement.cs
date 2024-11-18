@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Movement : MonoBehaviour
@@ -21,7 +19,7 @@ public class Movement : MonoBehaviour
     }
 
     private void Start() {
-        MoveDirection = transform.forward;
+        MoveDirection = Vector3.zero;
     }
 
     public void Update() {

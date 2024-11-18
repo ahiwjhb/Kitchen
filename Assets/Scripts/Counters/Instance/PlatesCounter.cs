@@ -1,6 +1,4 @@
 using Helper;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using static GameController;
 
@@ -41,12 +39,12 @@ public class PlatesCounter : Counter
     private void Update() {
         if (GameController.Instance.FSM.CurrentStateType != GameState.Playing) return;
 
-        if (spawnCDTimer.IsTimeUp()) {
-            if(PlateCount < plateCountMax) {
-                spawnCDTimer.ReStart(spawnInterval);
-                ++PlateCount;
-            }
+        if (spawnCDTimer.IsTimeUp() && PlateCount < plateCountMax) {
+            spawnCDTimer.ReStart(spawnInterval);
+            ++PlateCount;
+
         }
+
         if (PlateCount == plateCountMax) {
             spawnCDTimer.ReStart(spawnInterval);
         }

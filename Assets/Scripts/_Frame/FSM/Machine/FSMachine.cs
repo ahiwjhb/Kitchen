@@ -12,11 +12,14 @@ namespace FSM
 
         private IStateContainer<StateEnum, ContextClass> stateContainer;
 
+        private FSMBehaviour fsmBehaviour;
+
 
         public FSMachine(ContextClass contextClass, StateEnum defaultState) {
             stateContainer = new StateList<StateEnum, ContextClass>(contextClass);
             currentState = stateContainer.GetStateMethod(defaultState);
-            contextClass.AddComponent<FSMBehaviour>().mandatorFSM = this;
+            fsmBehaviour = contextClass.AddComponent<FSMBehaviour>();
+            fsmBehaviour.mandatorFSM = this;
         }
 
         public StateEnum CurrentStateType => currentState.Type;

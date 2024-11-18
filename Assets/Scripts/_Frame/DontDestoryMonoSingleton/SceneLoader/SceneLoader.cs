@@ -8,7 +8,7 @@ public class SceneLoader : DontDestoryMonoSingleton<SceneLoader>
 {
     [SerializeField] float fadeTime = 0.5f;
 
-    public const string GAME = "GameScene"; 
+    public const string GAME = "GameScene";
 
     private bool isLoading = false;
 
